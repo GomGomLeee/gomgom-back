@@ -67,7 +67,7 @@ def post_list_view(request):
 @login_required
 def post_detail_view(request, id):
     post = Post.objects.get(id=id)
-    
+    selections = post.selection_set.all()  # post와 연결된 selection 객체들 가져오기
     # 요청이 GET인 경우
     if request.method == 'GET':
         # 로그인이 안된 상태라면
@@ -77,6 +77,7 @@ def post_detail_view(request, id):
         else:
             context = {
             'post' : post,
+            'selections' : selections,
             'comment_form' : CommentForm(),
         }
         return render(request, 'posts/post-detail.html', context)

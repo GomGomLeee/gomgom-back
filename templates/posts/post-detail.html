@@ -5,12 +5,16 @@
 {% block content %}
 <h1>Post 상세 화면</h1>
     {{ post.writer }}님의 고민<br>
-    {% comment %} 프로필 사진 {% endcomment %}
     {{ post.title }}<br>
     {{ post.content|linebreaksbr }}<br>
-    {% comment %} selection1 {% endcomment %}
-    {% comment %} selection2 {% endcomment %}
-    댓글 {{ post.comment_set.all.count }}개 | 공감 {{ post.heart_count }}개
+    댓글 {{ post.comment_set.all.count }}개 | 공감 {{ post.heart_count }}개<br>
+    
+    {% for selection in selections %}
+        {% if selection.image %}
+            <img src="{{ selection.image.url }}" alt="Selection Image">
+        {% endif %}
+        <p>{{ selection.content }}</p>
+    {% endfor %}
     <br><br>
 
     {% for comment in post.comment_set.all %}
