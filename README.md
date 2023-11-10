@@ -127,7 +127,7 @@ https://github.com/MinseoKangQ/gomgom-back/assets/98332877/cb499187-df01-4e59-9d
 
 <h5>개발 툴</h5>
 
-<img src="https://img.shields.io/badge/Visual Studio-5C2D91?style=for-the-badge&logo=Visual Studio&logoColor=white"/>
+<img src="https://img.shields.io/badge/VS code-2F80ED?style=for-the-badge&logo=VS code&logoColor=white"/>
 
 <br>
 
